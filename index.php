@@ -1,3 +1,42 @@
+<?php
+$errors = array();
+
+$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
+$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
+$message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
+
+if(empty($name)) {
+    $errors['name'] = "Please fill in your full name.";
+}
+
+if(empty($email)) {
+    $errors['email'] = "Please fill in your email-adress.";
+}
+
+if(empty($message)) {
+    $errors['message'] = "Please fill in a message.";
+}
+
+if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
+    echo "Your email is valid";
+} else {
+    $errors['email'] = "This email-address is invalid.";
+}
+
+if (count($errors) > 0) {
+    displayErrors();
+}
+
+echo($errors[0]);
+
+function displayErrors() {
+    $x = 0;
+    for ($x = 0; $x < count($GLOBALS['errors']); $x++) {
+        print_r($GLOBALS['errors'][$x]);
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -13,7 +52,7 @@
     <div class="container">
         <h1>Contact us</h1>
         <div class="errors">
-            <p> <?php print_r($errors); ?></p>
+            <p> <?php  ?></p>
         </div>
         <div class="form">
             <form action="" method="post">
@@ -31,39 +70,3 @@
 </body>
 
 </html>
-
-<?php
-$errors = array();
-
-$name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
-$email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
-$message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
-
-if($name = "" ) {
-    $errors['name'] = "Please fill in your full name.";
-}
-
-if($email = "" ) {
-    $errors['email'] = "Please fill in your email-adress.";
-}
-
-if($message = "" ) {
-    $errors['message'] = "Please fill in a message.";
-}
-
-
-if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    echo "Your email is valid";
-} else {
-    $errors['email'] = "This email-address is invalid.";
-}
-
-if (count($errors) > 0) {
-    $errors[0] = "There are mistakes!";
-    exit;
-}
-
-// function displayErrors() {
-    
-// }
-?>

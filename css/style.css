@@ -11,5 +11,12 @@ html {
 .container {
     width: 50%;
     margin: 10% auto;
-    background-color:green;
+    background-color:grey;
+}
+
+.errors {
+    width: 250px;
+    height: 150px;
+    margin: 0 auto;
+    background-color: white;
 }
