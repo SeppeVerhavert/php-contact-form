@@ -1,0 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    justify-content: center;
+    text-align: center;
+}
+
+.container {
+    width: 50%;
+    margin: 10% auto;
+    background-color:green;
+}
