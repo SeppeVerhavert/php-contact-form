@@ -19,15 +19,43 @@ if (empty($message)) {
     $errors['2'] = "Please fill in a message. <br>";
 }
 
-function displayErrors() {
+function displayErrors()
+{
     for ($x = 0; $x < 4; $x++) {
         if (!empty($GLOBALS['errors'][$x])) {
             echo "<li>";
-            print_r ($GLOBALS['errors'][$x]);
+            print_r($GLOBALS['errors'][$x]);
             echo "</li>";
         }
     }
 }
+
+function sendMail() {
+    require('phpmailer/class.phpmailer.php');
+    $mail = new PHPMailer();
+    $mail->IsSMTP();
+    $mail->SMTPDebug = 0;
+    $mail->SMTPAuth = TRUE;
+    $mail->SMTPSecure = "tls";
+    $mail->Port     = 587;
+    $mail->Username = "Seppe Verhavert";
+    $mail->Password = "pqt5kku2";
+    $mail->Host     = "smtp.gmail.com";
+    $mail->Mailer   = "smtp";
+    $mail->SetFrom($GLOBALS['email'], $GLOBALS['name']);
+    $mail->AddReplyTo($GLOBALS['email'], "PHPPot");
+    $mail->AddAddress("seppe.verhavert@gmail.com");
+    $mail->Subject = "Test email using PHP mailer";
+    $mail->WordWrap   = 80;
+    $content = $GLOBALS['message'];
+    $mail->MsgHTML($content);
+    $mail->IsHTML(true);
+    if (!$mail->Send())
+        echo "Problem sending email.";
+    else
+        echo "email sent.";
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -46,9 +74,11 @@ function displayErrors() {
         <h1>Contact us</h1>
         <div class="errors">
             <ul> <?php
-                if (count($errors) > 0) {
-                    displayErrors();
-                }; ?>
+                    if (count($errors) > 0) {
+                        displayErrors();
+                    } else {
+                        sendMail();
+                    }; ?>
             </ul>
         </div>
         <div class="form">
