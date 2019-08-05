@@ -6,22 +6,26 @@ $email = filter_var($_POST["email"], FILTER_SANITIZE_EMAIL);
 $message = filter_var($_POST["message"], FILTER_SANITIZE_STRING);
 
 if (empty($name)) {
-    $errors['1'] = "Please fill in your full name. <br>";
+    $errors['0'] = "Please fill in your full name. <br>";
 }
 
 if (empty($email)) {
-    $errors['2'] = "Please fill in your email-adress. <br>";
+    $errors['1'] = "Please fill in your email-adress. <br>";
 } else if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    $errors['4'] = "This email-address is invalid. <br>";
+    $errors['3'] = "This email-address is invalid. <br>";
 }
 
 if (empty($message)) {
-    $errors['3'] = "Please fill in a message. <br>";
+    $errors['2'] = "Please fill in a message. <br>";
 }
 
 function displayErrors() {
-    for ($x = 0; $x <= 4; $x++) {
-        print_r ($GLOBALS['errors'][$x]);
+    for ($x = 0; $x < 4; $x++) {
+        if (!empty($GLOBALS['errors'][$x])) {
+            echo "<li>";
+            print_r ($GLOBALS['errors'][$x]);
+            echo "</li>";
+        }
     }
 }
 ?>
@@ -41,11 +45,11 @@ function displayErrors() {
     <div class="container">
         <h1>Contact us</h1>
         <div class="errors">
-            <p> <?php
+            <ul> <?php
                 if (count($errors) > 0) {
                     displayErrors();
                 }; ?>
-            </p>
+            </ul>
         </div>
         <div class="form">
             <form action="" method="post">
