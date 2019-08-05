@@ -31,12 +31,12 @@ function displayErrors()
 }
 
 function sendMail() {
-    require('phpmailer/class.phpmailer.php');
+    require('phpmailer/class.PHPMailer.php');
     $mail = new PHPMailer();
     $mail->IsSMTP();
-    $mail->SMTPDebug = 0;
+    $mail->SMTPDebug = 1;
     $mail->SMTPAuth = TRUE;
-    $mail->SMTPSecure = "tls";
+    $mail->SMTPSecure = "tls/ssl";
     $mail->Port     = 587;
     $mail->Username = "Seppe Verhavert";
     $mail->Password = "pqt5kku2";
