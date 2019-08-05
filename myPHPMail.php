@@ -1,7 +1,5 @@
 <?php
-
-require('phpmailer/PHPMailer.php');
-
+    require('phpmailer/class.PHPMailer.php');
     $mail = new PHPMailer();
     echo "yay";
     $mail->IsSMTP();
@@ -10,7 +8,7 @@ require('phpmailer/PHPMailer.php');
     $mail->SMTPSecure = "tls/ssl";
     $mail->Port     = 587;
     $mail->Username = "Seppe Verhavert";
-    $mail->Password = "pqt5kku2";
+    $mail->Password = "xqtjlscjojxmzvza";
     $mail->Host     = "smtp.gmail.com";
     $mail->Mailer   = "smtp";
     $mail->SetFrom($GLOBALS['email'], $GLOBALS['name']);

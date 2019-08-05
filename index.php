@@ -32,7 +32,8 @@ function displayErrors()
 
 function sendMail()
 {
-    require('phpmailer/myPHPMail.php');
+    require('class.PHPMailer.php');
+    require('myPHPMail.php');
 }
 
 ?>
