@@ -33,8 +33,7 @@ function displayErrors()
 
 function sendMail()
 {
-    require('class.PHPMailer.php');
-    require('myPHPMail.php');
+    echo "yay";
 }
 
 ?>
