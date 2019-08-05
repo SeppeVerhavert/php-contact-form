@@ -31,7 +31,7 @@ function displayErrors()
 }
 
 function sendMail() {
-    require('phpmailer/class.PHPMailer.php');
+    require('phpmailer/PHPMailer.php');
     $mail = new PHPMailer();
     $mail->IsSMTP();
     $mail->SMTPDebug = 1;
