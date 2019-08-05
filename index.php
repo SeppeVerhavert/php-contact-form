@@ -1,4 +1,5 @@
 <?php
+// xqtjlscjojxmzvza
 $errors = array();
 
 $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
