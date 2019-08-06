@@ -60,7 +60,7 @@ function DisplayErrorbox()
 
 <body>
     <div class="container">
-        <h1>Contact us</h1>
+        <h1>Write us something!</h1>
         <div class="errors">
             <ul>
                 <?php DisplayErrorbox(); ?>
@@ -73,9 +73,9 @@ function DisplayErrorbox()
                 <p>Email (*)</p>
                 <input type="text" name="email" placeholder="Email"><br>
                 <p>Your message</p>
-                <textarea rows="5" cols="30" name="message" placeholder="Write your message here."></textarea>
+                <textarea rows="10" cols="30" name="message" placeholder="Write your message here."></textarea>
                 <br>
-                <input type="submit" value="send">
+                <input class="sendBtn" type="submit" value="send">
             </form>
         </div>
     </div>
