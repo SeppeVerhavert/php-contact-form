@@ -1,5 +1,4 @@
 <?php
-// xqtjlscjojxmzvza
 $errors = array();
 
 $name = filter_var($_POST["name"], FILTER_SANITIZE_STRING);
@@ -54,8 +53,10 @@ function sendMail()
         <h1>Contact us</h1>
         <div class="errors">
             <ul> <?php
-                    if (count($errors) > 0) {
+                    if (count($errors) > 0 && count($errors) < 3) {
                         displayErrors();
+                    } else if (count($errors) >= 3) {
+                        echo "";
                     } else {
                         sendMail();
                     }; ?>
