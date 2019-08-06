@@ -67,7 +67,7 @@ function DisplayErrorbox()
             </ul>
         </div>
         <div class="form">
-            <form action="" method="post">
+            <form method="post">
                 <p>Full name</p>
                 <input type="text" name="name" placeholder="Full name"><br>
                 <p>Email (*)</p>
