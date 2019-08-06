@@ -32,7 +32,7 @@ function displayErrors()
 
 function sendMail()
 {
-    require 'phpmailer.php';
+    require 'PHPMailer.php';
 }
 
 function DisplayErrorbox()

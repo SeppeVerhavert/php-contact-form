@@ -11,12 +11,13 @@ html {
     font-family: 'Montserrat', sans-serif;
     background-image: url("../type.png");
     background-size: cover;
+    width: 100%;
 }
 
 .container {
     width: 30%;
-    margin: 10% auto;
-    background-color: rgba(153, 153, 153, 0.575);
+    margin: 9% auto;
+    background-color: rgba(153, 153, 153, 0.75);
 }
 
 h1 {
@@ -32,4 +33,15 @@ h1 {
 input {
     margin: 1%;
     font-family: 'Montserrat', sans-serif;
+}
+
+.sendBtn {
+    background-color: rgb(76, 175, 142);
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2%;
 }
