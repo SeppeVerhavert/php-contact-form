@@ -21,18 +21,25 @@ html {
 }
 
 h1 {
-    padding: 1%;
+    padding-top: 1%;
 }
 
 .errors {
-    width: 350px;
-    margin: 5% auto;
-    background-color: white;
+    width: 300px;
+    margin: auto;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    background-color: rgb(194, 99, 99);
+    color: rgb(250, 245, 245);
 }
 
 input {
     margin: 1%;
     font-family: 'Montserrat', sans-serif;
+}
+
+textarea {
+    margin: 1%;
 }
 
 .sendBtn {

@@ -67,12 +67,12 @@ function DisplayErrorbox()
             </ul>
         </div>
         <div class="form">
-            <form method="post">
-                <p>Full name</p>
+            <form action="" method="post">
+                <h3>Full name</h3>
                 <input type="text" name="name" placeholder="Full name"><br>
-                <p>Email (*)</p>
+                <h3>Email (*)</h3>
                 <input type="text" name="email" placeholder="Email"><br>
-                <p>Your message</p>
+                <h3>Your message</h3>
                 <textarea rows="10" cols="30" name="message" placeholder="Write your message here."></textarea>
                 <br>
                 <input class="sendBtn" type="submit" value="send">
