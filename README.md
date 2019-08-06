@@ -1,8 +1,6 @@
 # Php-contact-form
-Learn to process a contact form.
+Learn to process a contact form in PHP.
 ![screenshot01](https://i.imgur.com/S8u5GXH.jpg)
-
-
 
 ## Objectives
 Your client would like you to make him a website with a few pages. One of the pages should actually contain a contact form, so that people can send him messages. Create a fully-functioning [html contact form](https://htmldog.com/guides/html/beginner/forms/) which will be processed by a php script. That form has to be validated by the W3C and follow the basics of [Accessibility](https://htmldog.com/guides/html/advanced/forms/)... Because _[the web is for everyone](https://thatsthespir.it/quote/view/188)_.
@@ -82,3 +80,9 @@ The evaluation method chosen is a self-evaluation based on the following indicat
 
 ## Live Version
 Send me a message [here](https://frozen-beach-53064.herokuapp.com/).
+
+## Dependencies & Credits
+Image is taken from [Dustin Lee](https://unsplash.com/@dustinlee) on [Unsplash](https://unsplash.com/photos/jLwVAUtLOAQ)
+This site was made with:
+(Composer)[https://getcomposer.org/]
+(PHPMailer)[https://github.com/PHPMailer/PHPMailer]
