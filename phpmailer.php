@@ -18,15 +18,15 @@ try {
     $mail->Port       = 587;                                    // TCP port to connect to
 
     //Recipients
-    $mail->setFrom('seppe.verhavert@gmail.com', 'Mailer');
-    $mail->addAddress('seppe.verhavert@gmail.com');     // Add a recipient
+    $mail->setFrom('seppe.verhavert@gmail.com', $GLOBALS['name']);
+    $mail->addAddress('seppe.verhavert@gmail.com');             // Add a recipient
     $mail->addReplyTo('seppe.verhavert@gmail.com', 'Information');
 
     // Content
     $mail->isHTML(true);                                        // Set email format to HTML
-    $mail->Subject = 'Here is the subject';
-    $mail->Body    = 'This is the HTML message body <b>in bold!</b>';
-    $mail->AltBody = 'This is the body in plain text for non-HTML mail clients';
+    $mail->Subject = $GLOBALS['email'];
+    $mail->Body    = $GLOBALS['message'];
+    $mail->AltBody = $GLOBALS['message'];
 
     $mail->send();
     echo 'Message has been sent';
