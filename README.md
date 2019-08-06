@@ -37,9 +37,9 @@ $errors['2']  =  "Please fill in a message. <br>";
 }
 ```
 
-### Function DisplayErrorbox()
+### Function displayErrorbox()
 ```javascript
-function  DisplayErrorbox() {
+function  displayErrorbox() {
 	if  (count($GLOBALS['errors'])  >  0  &&  count($GLOBALS['errors'])  <  3)  
 	{ displayErrors(); }  
 	else  if  (count($GLOBALS['errors'])  >=  3)  
@@ -83,6 +83,9 @@ Send me a message [here](https://frozen-beach-53064.herokuapp.com/).
 
 ## Dependencies & Credits
 Image is taken from [Dustin Lee](https://unsplash.com/@dustinlee) on [Unsplash](https://unsplash.com/photos/jLwVAUtLOAQ)
+
 This site was made with:
+
 (Composer)[https://getcomposer.org/]
+
 (PHPMailer)[https://github.com/PHPMailer/PHPMailer]
