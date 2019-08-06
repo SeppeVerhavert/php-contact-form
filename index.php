@@ -35,6 +35,16 @@ function sendMail()
     require 'phpmailer.php';
 }
 
+function DisplayErrorbox()
+{
+    if (count($GLOBALS['errors']) > 0 && count($GLOBALS['errors']) < 3) {
+        displayErrors();
+    } else if (count($GLOBALS['errors']) >= 3) {
+        echo "";
+    } else {
+        sendMail();
+    }
+}
 ?>
 
 <!DOCTYPE html>
@@ -52,14 +62,8 @@ function sendMail()
     <div class="container">
         <h1>Contact us</h1>
         <div class="errors">
-            <ul> <?php
-                    if (count($errors) > 0 && count($errors) < 3) {
-                        displayErrors();
-                    } else if (count($errors) >= 3) {
-                        echo "";
-                    } else {
-                        sendMail();
-                    }; ?>
+            <ul>
+                <?php DisplayErrorbox(); ?>
             </ul>
         </div>
         <div class="form">
