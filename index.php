@@ -19,17 +19,6 @@ if (empty($message)) {
     $errors['2'] = "Please fill in a message. <br>";
 }
 
-function displayErrors()
-{
-    for ($x = 0; $x < 4; $x++) {
-        if (!empty($GLOBALS['errors'][$x])) {
-            echo "<li>";
-            print_r($GLOBALS['errors'][$x]);
-            echo "</li>";
-        }
-    }
-}
-
 function sendMail()
 {
     require 'PHPMailer.php';
@@ -43,6 +32,17 @@ function DisplayErrorbox()
         echo "";
     } else {
         sendMail();
+    }
+}
+
+function displayErrors()
+{
+    for ($x = 0; $x < 4; $x++) {
+        if (!empty($GLOBALS['errors'][$x])) {
+            echo "<li>";
+            print_r($GLOBALS['errors'][$x]);
+            echo "</li>";
+        }
     }
 }
 ?>
